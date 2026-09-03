@@ -23,5 +23,8 @@ ypred = model.predict(X_test)
 r2 = r2_score(y_test, ypred)
 rmse = root_mean_squared_error(y_test, ypred)
 
+print(f"R2: {r2}")
+print(f"RMSE: {rmse}")
+
 #Model dump
 joblib.dump(model, "D:\\mlops_day1\\models\\linear_reg_model.pkl")
