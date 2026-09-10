@@ -31,4 +31,4 @@ jobs:
         run: pytest tests/
 
       - name: Verify Docker Image Build
-        run: docker build -t my-image:latest ./notebooks
+        run: docker build -t my-image:latest -f notebooks/Dockerfile .
