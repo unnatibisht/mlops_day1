@@ -1,25 +1,23 @@
-name : CI Pipeline
+name: CI Pipeline
 
 on:
   push:
     branches: [ main ]
-    paths-ignore:
-      - 'data/**'
-      - 'src/train_mlflow.py'
-      - 'src/train.py'
+
   workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.11
+          python-version: '3.11'
 
       - name: Install Dependencies
         run: |

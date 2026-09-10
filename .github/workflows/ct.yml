@@ -32,9 +32,3 @@ jobs:
           rm -f mlflow.db
           rm -rf mlruns
           python src/train.py
-
-      - name: Trigger CI Validation Pipeline
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh workflow run ci.yml --ref main
